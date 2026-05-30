@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>NEON RUSH — Endless Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div id="hud-left">
+        <div id="lives-display">
+          <span class="life" id="life1">❤️</span>
+          <span class="life" id="life2">❤️</span>
+          <span class="life" id="life3">❤️</span>
+        </div>
+        <div id="power-up-display"></div>
+      </div>
+      <div id="hud-center">
+        <div id="score-display">
+          <span id="score-label">SCORE</span>
+          <span id="score-value">0</span>
+        </div>
+        <div id="combo-display" class="hidden">
+          <span id="combo-value">x1</span> COMBO
+        </div>
+      </div>
+      <div id="hud-right">
+        <div id="coin-display">
+          <span class="coin-icon">🪙</span>
+          <span id="coin-value">0</span>
+        </div>
+        <div id="hi-score-display">BEST <span id="hi-score-value">0</span></div>
+        <button id="pause-btn">⏸</button>
+      </div>
+    </div>
+
+    <!-- Mission Bar -->
+    <div id="mission-bar" class="hidden">
+      <div id="mission-text">MISSION</div>
+      <div id="mission-progress-wrap"><div id="mission-progress-fill"></div></div>
+    </div>
+
+    <!-- START SCREEN -->
+    <div id="start-screen" class="screen">
+      <div class="screen-bg-anim"></div>
+      <div class="screen-content">
+        <div class="game-logo">
+          <span class="logo-n">N</span><span class="logo-e">E</span><span class="logo-o">O</span><span class="logo-nn">N</span>
+          <br/>
+          <span class="logo-sub">RUSH</span>
+        </div>
+        <div id="daily-reward" class="reward-box hidden">
+          <div class="reward-title">🎁 DAILY REWARD!</div>
+          <div class="reward-coins">+50 🪙</div>
+        </div>
+        <div id="achievement-toast" class="achievement-toast hidden"></div>
+        <div class="hi-score-banner">BEST: <span id="start-hi-score">0</span> &nbsp;|&nbsp; COINS: <span id="start-total-coins">0</span></div>
+        <div class="missions-preview" id="missions-preview"></div>
+        <button id="start-btn" class="btn-primary">TAP TO RUN</button>
+        <div class="controls-hint">
+          ← → LANES &nbsp;|&nbsp; ↑ JUMP &nbsp;|&nbsp; ↓ SLIDE
+        </div>
+        <button id="music-toggle" class="btn-icon">🔊</button>
+      </div>
+    </div>
+
+    <!-- PAUSE SCREEN -->
+    <div id="pause-screen" class="screen hidden">
+      <div class="screen-content">
+        <div class="pause-title">PAUSED</div>
+        <button id="resume-btn" class="btn-primary">RESUME</button>
+        <button id="restart-btn-pause" class="btn-secondary">RESTART</button>
+        <button id="music-toggle-pause" class="btn-icon">🔊</button>
+      </div>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div id="gameover-screen" class="screen hidden">
+      <div class="screen-content">
+        <div class="gameover-title">GAME OVER</div>
+        <div class="score-summary">
+          <div class="summary-row"><span>SCORE</span><span id="final-score">0</span></div>
+          <div class="summary-row"><span>COINS</span><span id="final-coins">0</span></div>
+          <div class="summary-row hi"><span>BEST</span><span id="final-hi">0</span></div>
+        </div>
+        <div id="new-best-badge" class="hidden">🏆 NEW BEST!</div>
+        <div id="missions-complete" class="missions-complete"></div>
+        <button id="restart-btn" class="btn-primary">PLAY AGAIN</button>
+        <button id="menu-btn" class="btn-secondary">MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
